@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Anket A.Ş Takım Anketi</title>
+</head>
+<body>
+
+<form style="border:1px solid #ccc" th:action="@{../TeamSurvey/create}"
+      th:object="${teamSurveyDto}" method="post">
+    <div class="container" style="background-color:#4CAF50" >
+        <h1>Takım Anketi </h1>
+        <p>Anket verilerini eksiksiz tamamlayınız.</p>
+        <hr>
+
+        <label for="name"><b>İsim</b></label>
+        <input id="name" name="name" placeholder="İsmi Giriniz" th:field="*{name}" type="text" required >
+        <br>
+        <label for="surname"><b>Soy İsim</b></label>
+        <input type="text" id="surname" placeholder="Soy İsmi Giriniz" th:field="*{surname}" name="surname" required>
+        <br>
+        <label for="gender"><b>Cinsiyet</b></label>
+        <input type="radio" id="gender" th:field="*{gender}" name="gender" value="Erkek"> Erkek
+        <input type="radio" id="gender2" th:field="*{gender}" name="gender" value="Kadın"> Kadın
+        <br>
+        <label for="birthday"><b>Doğum Tarihi</b></label>
+        <input type="date" id="birthday" value="${teamSurveyDto.date}" pattern="yyyy-MM-dd" placeholder="Doğum Tarihi Giriniz" th:field="*{birthday}" name="birthday" required>
+        <br>
+        <label for="team"><b>Tutulan Takım</b></label>
+        <input type="text" id="team" placeholder="Takım Giriniz" th:field="*{team}" name="team" required>
+        <br>
+        <label for="description"><b>Açıklama</b></label>
+        <input type="text" id="description" placeholder="Açıklama giriniz" th:field="*{description}" name="description" required>
+        <br>
+        <hr>
+        <h4>Anketör</h4>
+        <p>Anketör bilgilerinizi giriniz.</p>
+        <label for="surveyor_name"><b>İsim:</b></label>
+        <input id="surveyor_name" name="surveyorName" placeholder="Anketör isminizi Giriniz" th:field="*{surveyorName}" type="text" required>
+        <br>
+        <label for="surveyor_sur_name"><b>Soy İsim:</b></label>
+        <input id="surveyor_sur_name" name="surveyorSurName" placeholder="Anketör soy isminizi Giriniz" th:field="*{surveyorSurName}" type="text" required>
+        <hr>
+        <div>
+            <button type="submit" class="signupbtn">Gönder</button>
+            <button type="button" class="cancelbtn">İptal</button>
+
+        </div>
+    </div>
+</form>
+</body>
+</html>

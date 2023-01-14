@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ANKET A.Ş</title>
+    <style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+</style>
+</head>
+<body style="background-color:powderblue;">
+<h1 style="background-color:LightGray;text-align:center;">Anket A.Ş Anketör platformu</h1>
+<p style="text-align:center;">
+
+    <a>    <img src="../images/icon.jpg" alt="Anket A.Ş" width="350" height="300"/></a>
+
+<br>
+    <a  th:href="@{/TeamSurveySolver}" class="button button1">Takım Anketi</a>
+    <a  th:href="@{/HappinessSurveySolver}" class="button button2">Mutluluk Anketi</a>
+</p>
+
+</body>
+</html>

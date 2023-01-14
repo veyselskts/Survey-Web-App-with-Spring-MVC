@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Anket A.Ş</title>
+</head>
+<body>
+<h2>Takım Anketi Verileri</h2>
+
+<form th:action="@{../allHappinessSurveyList}" th:object="${happinessSurveyDto}" method="get">
+  <table border="2" width="70%" cellpadding="2">
+    <tr><th>Id</th><th>İsim</th><th>Soy İsim</th><th>Doğum Tarihi</th><th>Cinsiyet</th><th>Mutluluk Oranı</th><th>Mutsuz Eden Şey</th><th>Mutlu Eden Şey</th></tr>
+
+    <tr th:each="happinessSurveyDto : ${TeamSurvey}" >
+
+      <td th:text= "${happinessSurveyDto.id}"></td>
+      <td th:text= "${happinessSurveyDto.name}" th:field="*{name}" > </td>
+      <td th:text= "${happinessSurveyDto.surname}"> </td>
+      <td th:text= "${happinessSurveyDto.birthday}"> </td>
+      <td th:text= "${happinessSurveyDto.gender }" > </td>
+      <td th:text= "${happinessSurveyDto.happinessRate}" > </td>
+      <td th:text= "${happinessSurveyDto.makingUnHappy}"> </td>
+      <td th:text= "${happinessSurveyDto.makingHappy}"> </td>
+
+      <td><a href="../DeleteHappinessSurvey}">Kaydı sil</a></td>
+      <td><a href="../UpdateHappinessSurvey}">Kaydı güncelle</a></td>
+    </tr>
+
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Anket A.ş</title>
+</head>
+<body>
+<h2>Takım Anketi Verileri</h2>
+
+<form th:action="@{../allTeamSurveyList}" th:object="${TeamSurvey}" method="get">
+    <table border="2" width="70%" cellpadding="2">
+        <tr><th>Id</th><th>İsim</th><th>Soy İsim</th><th>Doğum Tarihi</th><th>Cinsiyet</th><th>Takım</th><th>Takım Açıklaması</th></tr>
+
+            <tr th:each="teamSurveys : ${TeamSurvey}" >
+
+                <td th:text= "${teamSurveys.id}"></td>
+                <td th:text= "${teamSurveys.name}" th:field="*{name}" > </td>
+                <td th:text= "${teamSurveys.surname}"> </td>
+                <td th:text= "${teamSurveys.birthday}"> </td>
+                <td th:text= "${teamSurveys.gender }" > </td>
+                <td th:text= "${teamSurveys.team}" > </td>
+                <td th:text= "${teamSurveys.teamDescription}"> </td>
+                <td><a href="../DeleteTeamSurvey}">Kaydı sil</a></td>
+                <td><a href="../UpdateTeamSurvey}">Kaydı güncelle</a></td>
+            </tr>
+
+    </table>
+</form>
+</body>
+</html>

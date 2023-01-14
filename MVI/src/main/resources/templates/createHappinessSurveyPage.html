@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="border:1px solid #ccc" th:action="@{/HappinessSurvey/create}" th:object="${happinessSurveyDto}" method="post">
+    <div class="container" style="background-color:#008CBA;">
+
+        <h1>Mutluluk Anketi </h1>
+        <p>Anket verilerini eksiksiz tamamlayınız.</p>
+        <hr>
+
+        <label for="name"><b>İsim</b></label>
+        <input id="name" name="name" placeholder="İsmi Giriniz." th:field="*{name}" type="text" required >
+        <br>
+        <label for="sur_name"><b>Soy İsim</b></label>
+        <input type="text" id="sur_name" placeholder="Soy İsmi Giriniz." th:field="*{surname}" name="surname" required>
+        <br>
+        <label for="gender"><b>Cinsiyet</b></label>
+        <input type="radio" id="gender" th:field="*{gender}" name="gender" value="Erkek"> Erkek
+        <input type="radio" id="gender2" th:field="*{gender}" name="gender" value="Kadın"> Kadın
+        <br>
+        <label for="birthday"><b>Doğum Tarihi</b></label>
+        <input type="date" id="birthday" value="${happinessSurveyDto.date}" pattern="yyyy-MM-dd" placeholder="Doğum Tarihi Giriniz." th:field="*{birthday}" name="birthday" required>
+        <br>
+        <label for="happinessRate"><b>Mutluluk Oranı</b></label>
+        <input type="number" id="happinessRate" min="1" max="10" placeholder="1-10 Arası değer giriniz." name="happinessRate" required>
+        <br>
+        <label for="makingHappy"><b>Mutlu Eden Şeyler</b></label>
+        <input type="text" id="makingHappy" placeholder="Açıklama giriniz." name="makingHappy" required>
+        <br>
+        <label for="makingUnHappy"><b>Mutsuz Eden Şeyler</b></label>
+        <input type="text" id="makingUnHappy" placeholder="Açıklama giriniz." name="makingUnHappy" required>
+        <hr>
+        <h4>Anketör</h4>
+        <p>Anketör bilgilerinizi giriniz.</p>
+        <label for="surveyor_name"><b>İsim:</b></label>
+        <input id="surveyor_name" name="surveyor_name" placeholder="Anketör isminizi Giriniz" th:field="*{surveyorName}" type="text" required>
+        <br>
+        <label for="surveyor_sur_name"><b>Soy İsim:</b></label>
+        <input id="surveyor_sur_name" name="surveyor_sur_name" placeholder="Anketör soy isminizi Giriniz" th:field="*{surveyorSurName}" type="text" required>
+        <div>
+            <button type="submit" class="signupbtn">Gönder</button>
+            <button type="button" class="cancelbtn">İptal</button>
+
+        </div>
+    </div>
+</body>
+</html>

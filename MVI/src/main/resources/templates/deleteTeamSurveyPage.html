@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Anket A.Ş</title>
+</head>
+<body>
+
+
+<form style="border:1px solid #ccc" th:action="@{../TeamSurvey/delete}"
+      th:object="${teamSurveyDto}" method="get">
+  <div class="container" style="background-color:#4CAF50" >
+    <h1>Takım Anketi </h1>
+    <p>İstenen verileri eksiksiz tamamlayınız.</p>
+    <hr>
+    <label for="id"><b>Silmek istediğiniz anketin id numarasını giriniz:</b></label>
+    <input id="id" name="id" placeholder="id numarası giriniz..." th:field="*{id}" type="text" required >
+    <hr>
+    <div>
+      <button type="submit" class="signupbtn">Gönder</button>
+      <button type="button" class="cancelbtn">İptal</button>
+
+    </div>
+  </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Anket A.Ş</title>
+</head>
+<body>
+<form style="border:1px solid #ccc" method="post">
+    <h3>Mutluluk anketi için yapmak istediğiniz işlemi seçiniz.</h3>
+
+    <nav role="navigation">
+        <ul>
+            <li><a th:href="@{../CreateHappinessSurvey}">Yeni anket kayıt</a></li>
+            <li><a th:href="@{../UpdateHappinessSurvey}">Eski anket güncelleme</a></li>
+            <li><a th:href="@{../DeleteHappinessSurvey}">İstenilen anket kaydını silme</a></li>
+            <li><a th:href="@{../allHappinessSurveyList}">Güncel anket kaydını listele</a></li>
+        </ul>
+    </nav>
+</form>
+</body>
+</html>

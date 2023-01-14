@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form style="border:1px solid #ccc" th:action="@{/HappinessSurvey/delete}"
+      th:object="${happinessSurveyDto}" method="get">
+    <div class="container" style="background-color:#008CBA" >
+        <h1>Mutluluk Anketi </h1>
+        <p>Anket verilerini eksiksiz tamamlayınız.</p>
+        <hr>
+        <label for="id"><b>Silmek istediğiniz anketin id numarasını giriniz:</b></label>
+        <input id="id" name="id" placeholder="id numarası giriniz..." th:field="*{id}" type="text" required >
+        <hr>
+        <div>
+            <button type="submit" class="signupbtn">Gönder</button>
+            <button type="button" class="cancelbtn">İptal</button>
+
+        </div>
+    </div>
+</form>
+</body>
+</html>

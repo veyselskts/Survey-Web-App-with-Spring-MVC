@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="border:1px solid #ccc" th:action="@{/HappinessSurvey/update}"
+      th:object="${happinessSurveyDto}" method="post">
+    <div class="container" style="background-color:#008CBA" >
+        <h1>Mutluluk Anketi </h1>
+        <p>Anket verilerini eksiksiz tamamlayınız.</p>
+        <hr>
+        <label for="id"><b>Güncellemek istediğiniz anketin id numarasını giriniz:</b></label>
+        <input id="id" name="id" placeholder="id numarası giriniz..." th:field="*{id}" type="text" required >
+        <hr>
+        <br>
+        <label for="name"><b>İsim</b></label>
+        <input id="name" name="name" placeholder="İsmi Giriniz" th:field="*{name}" type="text" required >
+        <br>
+        <label for="surname"><b>Soy İsim</b></label>
+        <input type="text" id="surname" placeholder="Soy İsmi Giriniz" th:field="*{surname}" name="surname" required>
+        <br>
+        <label for="gender"><b>Cinsiyet</b></label>
+        <input type="radio" id="gender" th:field="*{gender}" name="gender" value="Erkek"> Erkek
+        <input type="radio" id="gender2" th:field="*{gender}" name="gender" value="Kadın"> Kadın
+        <br>
+        <label for="birthday"><b>Doğum Tarihi</b></label>
+        <input type="date" id="birthday" placeholder="Doğum Tarihi Giriniz" th:field="*{birthday}" name="birthday" required>
+        <br>
+        <label for="happinessRate"><b>Mutluluk Oranı</b></label>
+        <input type="text" id="happinessRate" min="1" max="10" placeholder="1-10 Arası bir sayı giriniz." th:field="*{happinessRate}" name="happinessRate" required>
+        <br>
+        <label for="makingHappy"><b>Mutlu eden şeyler</b></label>
+        <input type="text" id="makingHappy" placeholder="Mutlu eden şeyleri yazınız." th:field="*{makingHappy}" name="makingHappy" required>
+        <br>
+        <label for="makingUnHappy"><b>Mutsuz eden şeyler</b></label>
+        <input type="text" id="makingUnHappy" placeholder="Mutsuz eden şeyleri yazınız." th:field="*{makingUnHappy}" name="makingUnHappy" required>
+        <hr>
+
+        <div>
+            <button type="submit" class="signupbtn">Gönder</button>
+            <button type="button" class="cancelbtn">İptal</button>
+
+        </div>
+    </div>
+</form>
+</body>
+</html>
